@@ -279,13 +279,12 @@ z-index: 999999;
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <script>  
+    $(document).on("load",function(){
+        $('.spinner-wrapper').remove();
+    });
+
     $(document).ready(function()
     {
-        // Preloader
-        $(document).on("load",function(){
-            $('.spinner-wrapper').remove();
-        });
-
         $('.sidenav').sidenav();
         $('.scrollspy').scrollSpy();
         $('.carousel').carousel({
