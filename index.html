@@ -14,6 +14,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <style>
+
+        .select-wrapper input.select-dropdown:focus
+    {
+      border-bottom: 1px solid #333;
+    }
+    .dropdown-content li > a, .dropdown-content li > span
+    {
+      color: #333;
+    }
+
+    input.valid:not([type]), input.valid:not([type]):focus, input.valid[type="text"]:not(.browser-default), input.valid[type="text"]:not(.browser-default):focus, input.valid[type="password"]:not(.browser-default), input.valid[type="password"]:not(.browser-default):focus, input.valid[type="email"]:not(.browser-default), input.valid[type="email"]:not(.browser-default):focus, input.valid[type="url"]:not(.browser-default), input.valid[type="url"]:not(.browser-default):focus, input.valid[type="time"]:not(.browser-default), input.valid[type="time"]:not(.browser-default):focus, input.valid[type="date"]:not(.browser-default), input.valid[type="date"]:not(.browser-default):focus, input.valid[type="datetime"]:not(.browser-default), input.valid[type="datetime"]:not(.browser-default):focus, input.valid[type="datetime-local"]:not(.browser-default), input.valid[type="datetime-local"]:not(.browser-default):focus, input.valid[type="tel"]:not(.browser-default), input.valid[type="tel"]:not(.browser-default):focus, input.valid[type="number"]:not(.browser-default), input.valid[type="number"]:not(.browser-default):focus, input.valid[type="search"]:not(.browser-default), input.valid[type="search"]:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid > input.select-dropdown
+    {
+      border-bottom: 1px solid #333;
+      -webkit-box-shadow: 0 1px 0 0 #333;
+      box-shadow: 0 1px 0 0 #333;
+    }
+
+    input:not([type]):focus:not([readonly]) + label, input[type="text"]:not(.browser-default):focus:not([readonly]) + label, input[type="password"]:not(.browser-default):focus:not([readonly]) + label, input[type="email"]:not(.browser-default):focus:not([readonly]) + label, input[type="url"]:not(.browser-default):focus:not([readonly]) + label, input[type="time"]:not(.browser-default):focus:not([readonly]) + label, input[type="date"]:not(.browser-default):focus:not([readonly]) + label, input[type="datetime"]:not(.browser-default):focus:not([readonly]) + label, input[type="datetime-local"]:not(.browser-default):focus:not([readonly]) + label, input[type="tel"]:not(.browser-default):focus:not([readonly]) + label, input[type="number"]:not(.browser-default):focus:not([readonly]) + label, input[type="search"]:not(.browser-default):focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label
+    {
+      color: #333;
+    }
+
+    input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly])
+    {
+      border-bottom: #333;
+      box-shadow: #333;
+      -webkit-box-shadow: 0 1px 0 0 #333;
+    }
+
         .container 
         {
             width: 75%;
@@ -70,8 +99,7 @@
           <ul class="right hide-on-med-and-down">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
     </nav>
@@ -79,8 +107,7 @@
       <ul class="sidenav" id="mobile-demo">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>        
 
 
@@ -103,7 +130,7 @@
         <div class="row container">
           <h4 class="header" style="margin-top: 2.5rem; letter-spacing: 1px;">ABOUT</h2>
           <p style="text-align:justify; font-size: 1.2rem; margin-bottom: 2.5rem; color: #333;">
-                Basholi productions was founded in 2017. A company based in Nagpur and Mumbai. We have made several Music videos, Short Films and Commercials.
+                <strong>Basholi Productions</strong> was founded in 2017. A company based in Nagpur and Mumbai. We have made several Music videos, Short Films and Commercials.
 
                 We're a company open to new people, with open thinking and new ideologies.
 
@@ -146,7 +173,7 @@
         <div class="parallax"><img src="./img/p2.jpg"></div>
       </div>
 
-      <div class="section white">
+      <div id="contact" class="section white scrollspy">
             <div class="row container">
                 <h4 class="header" style="margin-top: 2.5rem; letter-spacing: 1px;">CONTACT US</h2>
                 <form action="https://formspree.io/viddesh.gharpure@gmail.com" method="POST">
@@ -156,7 +183,7 @@
                             <label for="name">Name</label>
                     </div> 
                     <div class="input-field">
-                            <input placeholder="John Doe" id="contact" name="contact" type="text" class="validate">
+                            <input placeholder="123-123-1234" id="contact" name="contact" type="text" class="validate">
                             <label for="contact">Contact</label>
                     </div> 
                     <div class="input-field">
@@ -167,7 +194,7 @@
                             <input placeholder="Type your message..." name="message" id="msg" type="text" class="validate">
                             <label for="msg">Message</label>
                     </div>   
-                    <button class="btn waves-effect waves-light center" type="submit" name="send">Submit
+                    <button style="background-color: #333;" class="btn waves-effect waves-light center" type="submit" name="send">Submit
                             <i class="material-icons right">send</i>
                     </button> 
                        
